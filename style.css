@@ -1,0 +1,1214 @@
+/* =========================
+   GLOBAL STYLES
+========================= */
+
+:root {
+    --orange: #ff9015;
+    --orange-dark: #f87938;
+    --background: #4e4f54;
+    --card: #74767a;
+    --white: #ffffff;
+    --muted: #c8c8cb;
+    
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 30px;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    background: var(--background);
+    color: var(--white);
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+.site-shell {
+    width: 100%;
+    max-width: 1600px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.section-padding {
+    padding: 65px 4%;
+}
+
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero {
+    position: relative;
+    min-height: 580px;
+    padding: 0 4% 45px;
+    background:
+        radial-gradient(
+            ellipse at 15% 5%,
+            rgba(180, 98, 52, 0.48),
+            transparent 40%
+        ),
+        var(--background);
+}
+
+.orange-background {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 27%;
+    height: 82%;
+    background: var(--orange);
+    z-index: 0;
+}
+
+.navbar {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    min-height: 75px;
+}
+
+.logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 10px;
+    line-height: 1.1;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+.logo-icon {
+    font-size: 27px;
+    font-weight: 900;
+    font-style: italic;
+}
+
+.logo strong {
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-links a {
+    font-size: 11px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--orange);
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 13px 22px;
+    border: 1px solid var(--orange);
+    background: var(--orange);
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    transition: 0.3s ease;
+}
+
+.button:hover {
+    background: transparent;
+    color: var(--orange);
+}
+
+.button-small {
+    padding: 10px 16px;
+    font-size: 10px;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr 0.9fr;
+    align-items: center;
+    min-height: 440px;
+}
+
+.hero-text {
+    position: relative;
+    z-index: 3;
+    padding: 20px 0 35px;
+}
+
+.small-label {
+    display: inline-block;
+    padding: 8px 12px;
+    margin-bottom: 22px;
+    border-radius: 20px;
+    background: var(--orange);
+    color: white;
+    font-size: 8px;
+    font-weight: 800;
+}
+
+.hero h1 {
+    font-size: clamp(38px, 5.3vw, 75px);
+    font-weight: 900;
+    line-height: 1.12;
+    letter-spacing: -2px;
+}
+
+.outline {
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.85);
+}
+
+.hero-description {
+    max-width: 420px;
+    margin-top: 20px;
+    color: #dedee0;
+    font-size: 11px;
+    line-height: 1.8;
+}
+
+.hero-stats {
+    display: flex;
+    align-items: flex-start;
+    gap: 35px;
+    margin-top: 30px;
+}
+
+.stat h3 {
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.stat p {
+    margin-top: 5px;
+    color: #d5d5d7;
+    font-size: 8px;
+    font-weight: 600;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.button-outline {
+    border-color: var(--orange);
+    background: transparent;
+}
+
+.button-outline:hover {
+    background: var(--orange);
+    color: white;
+}
+
+
+/* HERO IMAGE */
+
+.hero-image {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: stretch;
+    min-height: 400px;
+}
+
+.hero-image img {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 390px;
+    height: 390px;
+    object-fit: cover;
+    object-position: center;
+    mix-blend-mode: normal;
+    border-radius: 8px;
+    clip-path: inset(0 0 0 0);
+}
+
+.circle-decoration {
+    position: absolute;
+    z-index: 1;
+    width: 300px;
+    height: 300px;
+    border: 7px solid var(--orange);
+    border-right-color: transparent;
+    border-radius: 50%;
+    left: 0;
+    top: 45px;
+}
+
+.heart-card,
+.calorie-card {
+    position: absolute;
+    z-index: 4;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px;
+    background: #66686c;
+    border-radius: 4px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.heart-card {
+    top: 25px;
+    right: 0;
+}
+
+.heart-icon {
+    color: #ff5c4b;
+    font-size: 25px;
+}
+
+.heart-card p,
+.calorie-card p {
+    margin-bottom: 5px;
+    color: #d0d0d2;
+    font-size: 9px;
+}
+
+.heart-card h3,
+.calorie-card h3 {
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.calorie-card {
+    bottom: 45px;
+    left: -30px;
+}
+
+.chart-bars {
+    display: flex;
+    align-items: flex-end;
+    gap: 4px;
+    height: 38px;
+}
+
+.chart-bars span {
+    display: block;
+    width: 5px;
+    background: var(--orange);
+}
+
+.chart-bars span:nth-child(1) {
+    height: 20px;
+}
+
+.chart-bars span:nth-child(2) {
+    height: 30px;
+}
+
+.chart-bars span:nth-child(3) {
+    height: 25px;
+}
+
+.chart-bars span:nth-child(4) {
+    height: 37px;
+}
+
+.chart-bars span:nth-child(5) {
+    height: 18px;
+}
+
+
+/* =========================
+   SECTION HEADINGS
+========================= */
+
+.section-heading {
+    margin-bottom: 45px;
+    text-align: center;
+}
+
+.section-heading h2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    font-size: clamp(19px, 2.4vw, 32px);
+    font-weight: 900;
+    line-height: 1.4;
+}
+
+.section-heading .outline {
+    -webkit-text-stroke-width: 0.8px;
+}
+
+
+/* =========================
+   PROGRAMS SECTION
+========================= */
+
+.programs {
+    padding-top: 35px;
+    padding-bottom: 75px;
+}
+
+.program-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.program-card {
+    min-height: 200px;
+    padding: 22px 18px;
+    background: #77797d;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.program-card:hover {
+    background: var(--orange);
+    transform: translateY(-7px);
+}
+
+.program-icon {
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.program-card h3 {
+    margin-bottom: 12px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.program-card p {
+    min-height: 60px;
+    margin-bottom: 15px;
+    color: #eeeeef;
+    font-size: 10px;
+    line-height: 1.7;
+}
+
+.program-card a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.program-card a span {
+    font-size: 20px;
+}
+
+
+/* =========================
+   WHY CHOOSE US
+========================= */
+
+.why-us {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 65px;
+    padding-top: 55px;
+    padding-bottom: 90px;
+}
+
+.why-image-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 180px 130px;
+    gap: 12px;
+}
+
+.why-image-grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image-one {
+    grid-column: 1;
+    display: block;
+    margin-bottom: 12px;
+    color: var(--orange);
+    font-size: 10px;
+    font-weight: 800;
+}
+
+.why-content h2,
+.testimonial-content h2 {
+    font-size: clamp(25px, 3.1vw, 40px);
+    font-weight: 900;
+    line-height: 1.35;
+}
+
+.benefits {
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+    margin-top: 28px;
+    list-style: none;
+}
+
+.benefits li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.benefits li span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    border: 1px solid var(--orange);
+    border-radius: 50%;
+    color: var(--orange);
+    font-size: 11px;
+}
+
+.partners {
+    margin-top: 35px;
+}
+
+.partners p {
+    margin-bottom: 14px;
+    color: #c0c0c2;
+    font-size: 8px;
+}
+
+.partner-logos {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    color: #a0a1a5;
+    font-size: 19px;
+    font-weight: 900;
+    font-style: italic;
+}
+
+
+/* =========================
+   PRICING SECTION
+========================= */
+
+.pricing {
+    padding-top: 60px;
+    padding-bottom: 100px;
+    background:
+        radial-gradient(
+            ellipse at 50% 55%,
+            rgba(255, 112, 55, 0.23),
+            transparent 55%
+        );
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: center;
+    gap: 25px;
+    max-width: 1050px;
+    margin: auto;
+}
+
+.price-card {
+    padding: 25px 22px;
+    background: #686a6e;
+    transition: transform 0.3s ease;
+}
+
+.price-card:hover {
+    transform: translateY(-5px);
+}
+
+.price-card.featured {
+    padding-top: 32px;
+    padding-bottom: 32px;
+    background: linear-gradient(
+        145deg,
+        #ff624b,
+        #ff7040
+    );
+}
+
+.plan-icon {
+    margin-bottom: 14px;
+    font-size: 19px;
+}
+
+.price-card h3 {
+    margin-bottom: 20px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.price-card h2 {
+    margin-bottom: 20px;
+    font-size: 35px;
+    font-weight: 800;
+}
+
+.price-card ul {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    list-style: none;
+}
+
+.price-card li {
+    color: #eeeeef;
+    font-size: 10px;
+    line-height: 1.5;
+}
+
+.plan-benefits {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #e0e0e2;
+    font-size: 9px;
+}
+
+.price-button {
+    display: block;
+    width: 100%;
+    padding: 13px 10px;
+    background: white;
+    color: #333438;
+    text-align: center;
+    font-size: 10px;
+    font-weight: 700;
+    transition: 0.3s ease;
+}
+
+.price-button:hover {
+    background: #333438;
+    color: white;
+}
+
+.featured .price-button {
+    color: #e97538;
+}
+
+
+/* =========================
+   TESTIMONIALS
+========================= */
+
+.testimonials {
+    display: grid;
+    grid-template-columns: 1fr 0.8fr;
+    align-items: center;
+    gap: 65px;
+    padding-top: 40px;
+    padding-bottom: 100px;
+}
+
+.testimonial-content {
+    position: relative;
+}
+
+.testimonial-content > p {
+    max-width: 450px;
+    margin-top: 25px;
+    color: #dedee0;
+    font-size: 11px;
+    line-height: 1.9;
+}
+
+.testimonial-author {
+    margin-top: 20px;
+    color: var(--orange);
+    font-size: 8px;
+    font-weight: 700;
+}
+
+.testimonial-arrows {
+    display: flex;
+    gap: 12px;
+    margin-top: 35px;
+}
+
+.testimonial-arrows button {
+    border: none;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    font-size: 25px;
+}
+
+.testimonial-arrows button:hover {
+    color: var(--orange);
+}
+
+.testimonial-image {
+    position: relative;
+    width: 230px;
+    height: 240px;
+    justify-self: center;
+}
+
+.testimonial-image img {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.testimonial-frame {
+    position: absolute;
+    top: -12px;
+    left: -12px;
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--orange);
+}
+
+.testimonial-image::after {
+    position: absolute;
+    right: -12px;
+    bottom: -12px;
+    width: 85%;
+    height: 85%;
+    background: var(--orange-dark);
+    content: "";
+}
+
+
+/* =========================
+   NEWSLETTER
+========================= */
+
+.newsletter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    padding-top: 45px;
+    padding-bottom: 50px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+    background:
+        radial-gradient(
+            ellipse at 15% 15%,
+            rgba(255, 110, 55, 0.19),
+            transparent 50%
+        );
+}
+
+.newsletter-heading h2 {
+    font-size: clamp(22px, 3vw, 37px);
+    font-weight: 900;
+    line-height: 1.4;
+}
+
+.newsletter-form {
+    display: flex;
+    align-items: center;
+    width: 44%;
+    max-width: 440px;
+    padding: 7px;
+    background: #77797d;
+}
+
+.newsletter-form input {
+    min-width: 0;
+    flex: 1;
+    padding: 12px 10px;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: white;
+    font-size: 10px;
+}
+
+.newsletter-form input::placeholder {
+    color: #eeeeef;
+}
+
+.newsletter-form button {
+    padding: 12px 17px;
+    border: none;
+    background: var(--orange);
+    color: white;
+    cursor: pointer;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.newsletter-form button:hover {
+    background: var(--orange-dark);
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    padding: 35px 20px 20px;
+    background:
+        radial-gradient(
+            ellipse at 50% 100%,
+            rgba(255, 112, 55, 0.2),
+            transparent 65%
+        );
+}
+
+.social-links {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.social-links a {
+    font-size: 25px;
+    font-weight: 900;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--orange);
+}
+
+.footer-logo {
+    flex-direction: row;
+}
+
+.copyright {
+    color: #bdbdc0;
+    font-size: 9px;
+    text-align: center;
+}
+
+
+/* =========================
+   RESPONSIVE TABLET DESIGN
+========================= */
+
+@media (max-width: 900px) {
+
+    .hero {
+        padding-right: 5%;
+        padding-left: 5%;
+    }
+
+    .nav-links {
+        gap: 13px;
+    }
+
+    .nav-links a {
+        font-size: 9px;
+    }
+
+    .hero-content {
+        grid-template-columns: 1fr 0.8fr;
+    }
+
+    .hero h1 {
+        font-size: clamp(34px, 5vw, 50px);
+        letter-spacing: -1px;
+    }
+
+    .hero-stats {
+        gap: 18px;
+    }
+
+    .stat h3 {
+        font-size: 18px;
+    }
+
+    .hero-image img {
+        height: 320px;
+    }
+
+    .circle-decoration {
+        width: 230px;
+        height: 230px;
+    }
+
+    .heart-card {
+        right: -5px;
+    }
+
+    .calorie-card {
+        left: -15px;
+    }
+
+    .section-padding {
+        padding-right: 5%;
+        padding-left: 5%;
+    }
+
+    .program-grid {
+        gap: 12px;
+    }
+
+    .program-card {
+        padding: 18px 12px;
+    }
+
+    .program-card h3 {
+        font-size: 11px;
+    }
+
+    .why-us,
+    .testimonials {
+        gap: 35px;
+    }
+
+    .why-image-grid {
+        grid-template-rows: 150px 110px;
+    }
+
+    .price-card {
+        padding: 22px 15px;
+    }
+
+    .price-card h2 {
+        font-size: 30px;
+    }
+
+}
+
+
+/* =========================
+   RESPONSIVE MOBILE DESIGN
+========================= */
+
+@media (max-width: 600px) {
+
+    .section-padding {
+        padding: 45px 5%;
+    }
+
+    .hero {
+        min-height: auto;
+        padding: 0 5% 35px;
+    }
+
+    .orange-background {
+        width: 42%;
+        height: 55%;
+    }
+
+    .navbar {
+        min-height: 65px;
+        gap: 10px;
+    }
+
+    .logo {
+        font-size: 9px;
+    }
+
+    .logo-icon {
+        font-size: 23px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .nav-button {
+        margin-left: auto;
+        padding: 9px 12px;
+        font-size: 9px;
+    }
+
+    .hero-content {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .hero-text {
+        padding-top: 30px;
+        padding-bottom: 10px;
+    }
+
+    .small-label {
+        margin-bottom: 18px;
+        font-size: 7px;
+    }
+
+    .hero h1 {
+        font-size: clamp(36px, 10vw, 54px);
+        line-height: 1.15;
+    }
+
+    .hero-description {
+        max-width: 340px;
+        font-size: 10px;
+    }
+
+    .hero-stats {
+        flex-wrap: wrap;
+        gap: 20px;
+        margin-top: 24px;
+    }
+
+    .stat h3 {
+        font-size: 18px;
+    }
+
+    .stat p {
+        font-size: 7px;
+    }
+
+    .hero-image {
+        min-height: 300px;
+        margin-top: 10px;
+    }
+
+    .hero-image img {
+        width: 85%;
+        max-width: 330px;
+        height: 290px;
+    }
+
+    .circle-decoration {
+        top: 25px;
+        left: 5%;
+        width: 230px;
+        height: 230px;
+    }
+
+    .heart-card {
+        top: 15px;
+        right: 0;
+        padding: 10px;
+    }
+
+    .heart-card h3,
+    .calorie-card h3 {
+        font-size: 13px;
+    }
+
+    .calorie-card {
+        bottom: 15px;
+        left: 0;
+        padding: 10px;
+    }
+
+    .section-heading {
+        margin-bottom: 28px;
+    }
+
+    .section-heading h2 {
+        gap: 8px;
+        font-size: 19px;
+    }
+
+    .programs {
+        padding-top: 35px;
+        padding-bottom: 45px;
+    }
+
+    .program-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .program-card {
+        min-height: 190px;
+        padding: 16px 12px;
+    }
+
+    .program-card h3 {
+        font-size: 11px;
+    }
+
+    .program-card p {
+        min-height: 75px;
+        font-size: 9px;
+    }
+
+    .program-card a {
+        font-size: 9px;
+    }
+
+    .why-us {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        padding-top: 30px;
+        padding-bottom: 55px;
+    }
+
+    .why-image-grid {
+        grid-template-rows: 160px 110px;
+        gap: 8px;
+    }
+
+    .why-content h2,
+    .testimonial-content h2 {
+        font-size: 30px;
+    }
+
+    .benefits {
+        gap: 15px;
+    }
+
+    .benefits li {
+        font-size: 9px;
+    }
+
+    .pricing {
+        padding-top: 45px;
+        padding-bottom: 50px;
+    }
+
+    .pricing-grid {
+        grid-template-columns: 1fr;
+        max-width: 340px;
+        gap: 18px;
+    }
+
+    .price-card,
+    .price-card.featured {
+        padding: 25px 22px;
+    }
+
+    .price-card h2 {
+        font-size: 32px;
+    }
+
+    .price-card li {
+        font-size: 10px;
+    }
+
+    .testimonials {
+        grid-template-columns: 1fr;
+        gap: 45px;
+        padding-top: 35px;
+        padding-bottom: 65px;
+    }
+
+    .testimonial-content > p {
+        font-size: 10px;
+    }
+
+    .testimonial-image {
+        width: 210px;
+        height: 220px;
+    }
+
+    .newsletter {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 25px;
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    .newsletter-heading h2 {
+        font-size: 25px;
+    }
+
+    .newsletter-form {
+        width: 100%;
+        max-width: none;
+    }
+
+    .newsletter-form input {
+        font-size: 9px;
+    }
+
+    .newsletter-form button {
+        padding: 12px;
+        font-size: 9px;
+    }
+
+    .footer {
+        gap: 20px;
+        padding-top: 30px;
+    }
+
+    .social-links {
+        gap: 30px;
+    }
+
+}
+
+
+/* =========================
+   SMALL MOBILE SCREENS
+========================= */
+
+@media (max-width: 360px) {
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .hero-stats {
+        gap: 13px;
+    }
+
+    .stat h3 {
+        font-size: 16px;
+    }
+
+    .section-heading h2 {
+        font-size: 16px;
+    }
+
+    .program-card {
+        padding: 13px 10px;
+    }
+
+    .program-card h3 {
+        font-size: 10px;
+    }
+
+    .program-card p {
+        font-size: 8px;
+    }
+
+}
